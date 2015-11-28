@@ -1,5 +1,5 @@
 # AtilBspillet
-Skabelon til at lære Danske børn/unge Unity3D
+Skabelon til at lære Danske børn/unge Unity3D.
 Spillet handler om at bevæge sin karakter fra A til B.
 Det er op til spil-udvikleren at sætte monstre, forhindringer, fælder og eksplosioner!
 
