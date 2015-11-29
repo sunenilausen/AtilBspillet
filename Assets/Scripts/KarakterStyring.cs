@@ -40,9 +40,6 @@ public class KarakterStyring : MonoBehaviour {
 
         playerRigidbody.velocity = Vector3.ClampMagnitude(playerRigidbody.velocity, maxHastighed);
 
-
-        print(playerRigidbody.velocity);
-
 	}
 
 	public Vector3 RetningTilMål(Vector3 mål)
