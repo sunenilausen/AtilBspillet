@@ -43,8 +43,7 @@ public class InputStyring : MonoBehaviour
 		RaycastHit hit;
 		if (Physics.Raycast(ray, out hit, 100.0F, floorMask))
 		{
-			Debug.DrawLine(ray.origin, hit.point, Color.red, 10);
-			print (ray.origin);
+			//Debug.DrawLine(ray.origin, hit.point, Color.red, 10);
 			KarakterStyring.Instance.Bevæg(KarakterStyring.Instance.RetningTilMål(hit.point));
 		}
 	}

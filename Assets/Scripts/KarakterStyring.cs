@@ -3,7 +3,8 @@ using System.Collections;
 
 public class KarakterStyring : MonoBehaviour {
 
-	public float hastighed = 1f;          
+	public float hastighed = 1f;
+    public float maxHastighed = 1f;   
 	
 	// The vector to store the direction of the player's movement.
 	Vector3 bevægelse;
@@ -23,6 +24,9 @@ public class KarakterStyring : MonoBehaviour {
 		// Set up references.
 		playerRigidbody = GetComponent<Rigidbody>();
 	}
+
+    void Update(){
+    }
 	
 	public void Bevæg(Vector3 mål) {
 		// Set the movement vector based on the axis input.
@@ -32,7 +36,13 @@ public class KarakterStyring : MonoBehaviour {
 		bevægelse = bevægelse.normalized * hastighed * Time.deltaTime;
 		
 		// Move the player to it's current position plus the movement.
-		playerRigidbody.MovePosition(transform.position + bevægelse);
+		playerRigidbody.AddForce(bevægelse);
+
+        playerRigidbody.velocity = Vector3.ClampMagnitude(playerRigidbody.velocity, maxHastighed);
+
+
+        print(playerRigidbody.velocity);
+
 	}
 
 	public Vector3 RetningTilMål(Vector3 mål)
